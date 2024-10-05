@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <locale.h>
+#include <ctype.h>
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+
+    int i, vo, co;
+    char letras[100];
+    vo = 0;
+    co = 0;
+
+    for (i = 0; i <= 100; i++)
+    {
+        printf("digite a %d letra que sera guardada \n", i + 1);
+        scanf("%c", &letras[i]);
+        getchar();
+        letras[i] = tolower(letras[i]);
+
+        if (letras[i] == 'a' || letras[i] == 'e' || letras[i] == 'i' || letras[i] == 'o' || letras[i] == 'u')
+        {
+            vo++;
+        }
+        else
+        {
+            co++;
+        }
+    }
+
+    printf("a quantidade de vogais que você digitou foram %d e o percentual de consoantes foram de %d %% comparando todas as letras\n", vo, co);
+}
